@@ -19,14 +19,27 @@ body {
 
 .title {
     font-size: 3rem;
-    color: white;
+    color: #F1F6F5;
     margin-top: -50px;
 }
 
 label {
-    font-size: 1.5rem;
-    color: white;
-    padding: 10px;
+    font-size: 2rem;
+    color: #F1F6F5;
+    margin-bottom: 1rem;
+}
+
+.input-value {
+  padding: 15px;
+  width: 12rem;
+  height: 1rem;
+  margin-bottom: 1.2rem;
+  border: none transparent;
+  outline: none;
+  background: transparent;
+  font-size: 1.5rem;
+  color: #F1F6F5;
+  border-bottom: solid;
 }
 
 .card {
@@ -41,8 +54,6 @@ label {
     text-align: center;
     flex-flow: column wrap;
     display: flex;
-    color: rgb(88 199 250 / 0%);
-    cursor: pointer;
     font-family: cursive;
   }
   

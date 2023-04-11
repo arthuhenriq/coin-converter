@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <div>
-      <Converter firstCoin='BRL' secondCoin='USD'></Converter>
+      <Converter coinValue='USD' coinValue2='BRL'></Converter>
     </div>
   );
 }
