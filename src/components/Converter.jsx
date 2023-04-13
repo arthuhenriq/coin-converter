@@ -1,8 +1,12 @@
+import React from "react";
 import { useState, useEffect } from "react";
+import { DropDownSecondCoin} from "./DropDownSecondValue";
 import style from "../styles/style.css";
 
-export function Converter({ coinValue, coinValue2 }) {
+export function Converter({firstCoin}) {
+
   const [firstValue, setFirstValue] = useState(0);
+  const [secondCoin, setSecondCoin] = useState('USD')
   const [price, setPrice] = useState(0);
 
   const changeFirstValue = function (e) {
@@ -10,13 +14,12 @@ export function Converter({ coinValue, coinValue2 }) {
   };
 
   const convert = async function () {
-    const url = `https://economia.awesomeapi.com.br/json/last/${coinValue2}-${coinValue}`;
+    const url = `https://economia.awesomeapi.com.br/json/last/${secondCoin}-${firstCoin}`;
 
     const response = await fetch(url);
     const result = await response.json();
-
-
-    setPrice(result[`${coinValue2}${coinValue}`]["bid"]);
+    
+    setPrice(result[`${secondCoin}${firstCoin}`]["bid"]);
     let finalValue = firstValue * price;
 
     if (price) {
@@ -28,11 +31,13 @@ export function Converter({ coinValue, coinValue2 }) {
     convert();
   }, []);
 
+  
+
   return (
     <div className="body">
       <div className="card">
         <h1 className="title">Coin Converter</h1>
-        <label>{coinValue2}</label>
+        <label>BRL</label>
         <input
           type="text"
           onChange={changeFirstValue}
@@ -40,7 +45,7 @@ export function Converter({ coinValue, coinValue2 }) {
           className="input-value"
           placeholder="Value"
         ></input>
-        <label>{coinValue}</label>
+        <DropDownSecondCoin secondCoin={setSecondCoin}/>
         <label id="answer"></label>
         <button type="button" onClick={convert}>
           Converter
