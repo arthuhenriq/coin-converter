@@ -4,6 +4,7 @@ import { DropDownSecondCoin } from "./DropDownSecondValue";
 import style from "../styles/style.css";
 
 export function Converter({ firstCoin }) {
+  const [teste, setTeste] = useState('BRL')
   const [firstValue, setFirstValue] = useState(0);
   const [secondCoin, setSecondCoin] = useState("USD");
   const [price, setPrice] = useState(0);
@@ -13,13 +14,16 @@ export function Converter({ firstCoin }) {
   };
 
 
-  if(secondCoin === 'BTC') {
-    let label = document.getElementById('labelCoin')
-    label.innerHTML = 'Moedas'
-  } else {
-    let label = document.getElementById('labelCoin')
-    label.innerHTML = firstCoin
-  }
+  useEffect(() => {
+    if(secondCoin === 'BTC') {
+      setTeste('Moeda')
+    } else {
+      setTeste('BRL')
+    }
+  },[secondCoin])
+    
+  
+  
 
   const convert = async function () {
     const url = `https://economia.awesomeapi.com.br/json/last/${secondCoin}-${firstCoin}`;
@@ -58,6 +62,7 @@ export function Converter({ firstCoin }) {
   };
 
   useEffect(() => {
+
     convert();
   }, []);
 
@@ -65,7 +70,7 @@ export function Converter({ firstCoin }) {
     <div className="body">
       <div className="card">
         <h1 className="title">Coin Converter</h1>
-        <label id="labelCoin">BRL</label>
+        <label id="labelCoin">{teste}</label>
         <input
           type="number"
           step={"0.01"}
