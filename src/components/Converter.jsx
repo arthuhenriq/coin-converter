@@ -4,7 +4,7 @@ import { DropDownSecondCoin } from "./DropDownSecondValue";
 import style from "../styles/style.css";
 
 export function Converter({ firstCoin }) {
-  const [teste, setTeste] = useState('BRL')
+  const [coinName, setCoinName] = useState('BRL')
   const [firstValue, setFirstValue] = useState(0);
   const [secondCoin, setSecondCoin] = useState("USD");
   const [price, setPrice] = useState(0);
@@ -16,9 +16,9 @@ export function Converter({ firstCoin }) {
 
   useEffect(() => {
     if(secondCoin === 'BTC') {
-      setTeste('Moeda')
+      setCoinName('Moedas')
     } else {
-      setTeste('BRL')
+      setCoinName('BRL')
     }
   },[secondCoin])
     
@@ -62,15 +62,14 @@ export function Converter({ firstCoin }) {
   };
 
   useEffect(() => {
-
     convert();
-  }, []);
+  }, [secondCoin]);
 
   return (
     <div className="body">
       <div className="card">
         <h1 className="title">Coin Converter</h1>
-        <label id="labelCoin">{teste}</label>
+        <label id="labelCoin">{coinName}</label>
         <input
           type="number"
           step={"0.01"}
@@ -82,7 +81,7 @@ export function Converter({ firstCoin }) {
         ></input>
         <DropDownSecondCoin secondCoin={setSecondCoin} />
         <label id="answer"></label>
-        <button type="reset" onClick={convert}>
+        <button className="custom-button" type="reset" onClick={convert}>
           Converter
         </button>
       </div>

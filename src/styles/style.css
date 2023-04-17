@@ -101,5 +101,76 @@ label {
   }
 
 
+  
+  .box {
+    position: relative;
+    margin: 25px;
+  }
+  
+  .box select {
+    background-color: #191c29;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: none;
+    outline: none;
+  }
+  
+  .box::before {
+    content: "\2228";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+   
+  }
+  
+  .box:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .box select option {
+    padding: 30px;
+  }
+
+  button {
+    margin: 15px;
+  }
+  
+  .custom-button {
+    width: 12em;
+  height: 2.5em;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 10px 25px;
+  font-weight: 500;
+  background: linear-gradient(90deg, #393053 0%, #18122B 100%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+  }
+
+  .custom-button:hover {
+    background: rgb(0,3,255);
+background: linear-gradient(90deg, #635985 0%, #18122B 100% );
+  }
 
 // Magic Card Credits to Gayane Gasparyan
