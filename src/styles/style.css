@@ -1,32 +1,32 @@
 @property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
-  }
-  
-  :root {
-    --card-height: 65vh;
-    --card-width: calc(var(--card-height));
-  }
-  
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height));
+}
+
 body {
-    background: #191c29;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background: #191c29;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .title {
-    font-size: 3rem;
-    color: #F1F6F5;
-    margin-top: -50px;
+  font-size: 3rem;
+  color: #f1f6f5;
+  margin-top: -50px;
 }
 
 label {
-    font-size: 2rem;
-    color: #F1F6F5;
-    margin-bottom: 1rem;
+  font-size: 2rem;
+  color: #f1f6f5;
+  margin-bottom: 1rem;
 }
 
 .input-value {
@@ -38,139 +38,141 @@ label {
   outline: none;
   background: transparent;
   font-size: 1.5rem;
-  color: #F1F6F5;
+  color: #f1f6f5;
   border-bottom: solid;
 }
 
 .card {
-    background: #191c29;
-    width: var(--card-width);
-    height: var(--card-height);
-    padding: 3px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    flex-flow: column wrap;
-    display: flex;
-    font-family: cursive;
-  }
-  
-  .card::before {
-    content: "";
-    width: 104%;
-    height: 102%;
-    border-radius: 8px;
-    background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      position: absolute;
-      z-index: -1;
-      top: -1%;
-      left: -2%;
-      animation: spin 2.5s linear infinite;
-  }
-  
-  .card::after {
-    position: absolute;
-    content: "";
-    top: calc(var(--card-height) / 6);
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--card-height) / 6));
-    background-image: linear-gradient(
-      var(--rotate)
-      , #5ddcff, #3c67e3 43%, #4e00c2);
-      opacity: 1;
-    animation: spin 2.5s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% {
-      --rotate: 0deg;
-    }
-    100% {
-      --rotate: 360deg;
-    }
-  }
+  background: #191c29;
+  width: var(--card-width);
+  height: var(--card-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-flow: column wrap;
+  display: flex;
+  font-family: cursive;
+}
 
+.card::before {
+  content: "";
+  width: 104%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -2%;
+  animation: spin 2.5s linear infinite;
+}
 
-  
-  .box {
-    position: relative;
-    margin: 25px;
-  }
-  
-  .box select {
-    background-color: #191c29;
-    color: white;
-    padding: 12px;
-    width: 250px;
-    border: none;
-    font-size: 1.2rem;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-    -webkit-appearance: none;
-    outline: none;
-  }
-  
-  .box::before {
-    content: "\2228";
-    font-family: FontAwesome;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
-    height: 100%;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 45px;
-    color: rgba(255, 255, 255, 0.5);
-    background-color: rgba(255, 255, 255, 0.1);
-    pointer-events: none;
-   
-  }
-  
-  .box:hover::before {
-    color: rgba(255, 255, 255, 0.6);
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-  
-  .box select option {
-    padding: 30px;
-  }
+.card::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--card-height) / 6);
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--card-height) / 6));
+  background-image: linear-gradient(
+    var(--rotate),
+    #5ddcff,
+    #3c67e3 43%,
+    #4e00c2
+  );
+  opacity: 1;
+  animation: spin 2.5s linear infinite;
+}
 
-  button {
-    margin: 15px;
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
   }
-  
-  .custom-button {
-    width: 12em;
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+.box {
+  position: relative;
+  margin: 25px;
+}
+
+.box select {
+  background-color: #191c29;
+  color: white;
+  padding: 12px;
+  width: 250px;
+  border: none;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.box::before {
+  content: "\2228";
+  font-family: FontAwesome;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+
+button {
+  margin: 15px;
+}
+
+.custom-button {
+  width: 12em;
   height: 2.5em;
   color: #fff;
   border-radius: 5px;
   font-size: 1.5rem;
   padding: 10px 25px;
   font-weight: 500;
-  background: linear-gradient(90deg, #393053 0%, #18122B 100%);
+  background: linear-gradient(90deg, #393053 0%, #18122b 100%);
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
-  }
+}
 
-  .custom-button:hover {
-    background: rgb(0,3,255);
-background: linear-gradient(90deg, #635985 0%, #18122B 100% );
-  }
+.custom-button:hover {
+  background: rgb(0, 3, 255);
+  background: linear-gradient(90deg, #635985 0%, #18122b 100%);
+}
 
 // Magic Card Credits to Gayane Gasparyan
