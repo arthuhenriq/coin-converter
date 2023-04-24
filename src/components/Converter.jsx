@@ -62,7 +62,7 @@ export function Converter({ firstCoin }) {
   }, [secondCoin]);
 
   return (
-    <div className="body">
+    <section className="body">
       <div className="card">
         <h1 className="title">Coin Converter</h1>
         <label id="labelCoin">{coinName}</label>
@@ -81,6 +81,6 @@ export function Converter({ firstCoin }) {
           Converter
         </button>
       </div>
-    </div>
+    </section>
   );
 }

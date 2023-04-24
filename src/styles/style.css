@@ -5,17 +5,20 @@
 }
 
 :root {
-  --card-height: 65vh;
+  --card-height: 40em;
   --card-width: calc(var(--card-height));
 }
 
 body {
   background: #191c29;
-  min-height: 100vh;
+  height: 100%;
+  max-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  
+  margin-top: 100px;
 }
+
 
 .title {
   font-size: 3rem;
@@ -57,7 +60,7 @@ label {
   font-family: cursive;
 }
 
-.card::before {
+ .card::before {
   content: "";
   width: 104%;
   height: 102%;
@@ -104,7 +107,7 @@ label {
   100% {
     --rotate: 360deg;
   }
-}
+} 
 
 .box {
   position: relative;
@@ -176,3 +179,11 @@ button {
 }
 
 // Magic Card Credits to Gayane Gasparyan
+
+
+
+@media only screen and (max-device-width: 400px) {
+
+
+  }
+
